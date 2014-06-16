@@ -1,0 +1,28 @@
+<style type="text/css">
+  body {
+    color: purple;
+    background-color: #d8da3d }
+  </style>
+<h1> WELCOME TO RAILWAY RESERVATION SITE<h1>
+<h2> Login </h2>
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <h3>Form is invalid</h3>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  Username :<%= text_field_tag(:user) %>
+<br>
+Password :<%= password_field_tag(:pass) %>
+<br>
+
+<%= submit_tag(:check) %>
+
+<% end%>
+
+
